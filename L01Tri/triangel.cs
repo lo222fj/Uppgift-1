@@ -2,11 +2,11 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-public struct Point
+public struct Point//struct. Likt en klass. 
 {
     public int x, y;
 
-    public Point(int a, int b)
+    public Point(int a, int b)//a och b är koordinater på en punkt
     {
         x = a;
         y = b;
@@ -29,8 +29,9 @@ public class Triangle
             sides[i] = s[i];
     }
 
-    public Triangle(Point a, Point b, Point c)
+    public Triangle(Point a, Point b, Point c) //skapa tre variabler av typen Point. Se till att de har värden. Skicka med dem!
     {
+        //Math.Pow tar det ena argumentet ex (double)(b.x - a.x) upphöjt till det andra argumentet (2.0)
         sides = new double[3];
         sides[0] = Math.Sqrt(Math.Pow((double)(b.x - a.x), 2.0) + Math.Pow((double)(b.y - a.y), 2.0));
         sides[1] = Math.Sqrt(Math.Pow((double)(b.x - c.x), 2.0) + Math.Pow((double)(b.x - a.x), 2.0));
@@ -59,7 +60,7 @@ public class Triangle
     //Equilateral = liksidig
     public bool isEquilateral()
     {
-        if (uniqueSides() == 3)
+        if (uniqueSides() == 1)//Ändrat till 1
             return true;
         return false;
     }
