@@ -20,6 +20,7 @@ namespace UnitTestL01Tri
             Assert.IsTrue(tri.isEquilateral());
         }
 
+      
         [TestMethod]
         public void isScaleneTest()
         {
@@ -32,6 +33,13 @@ namespace UnitTestL01Tri
         {
             Triangle tri = new Triangle(0.1, 0.2, 0.3);
             Assert.IsTrue(tri.isScalene());
+        }
+
+        [TestMethod]
+        public void oneSideIsZero()
+        {
+            Triangle tri = new Triangle(0.0, 1.0, 1.0);
+            Assert.IsTrue(tri.isIsosceles());
         }
 
         [TestMethod]
