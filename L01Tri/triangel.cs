@@ -53,7 +53,7 @@ public class Triangle
     //Scalene = inte några lika sidor
     public bool isScalene()
     {
-        if (uniqueSides() == 1)
+        if (uniqueSides() == 3)
             return true;
         return false;
     }
