@@ -52,7 +52,7 @@ namespace UnitTestL01Tri
 
         [TestMethod]
         //Test av konstruktor som tar tre punkter på liksidig triangel
-        public void constructorThreePoints()
+        public void constructorThreePointsIsosceles()
         {
             Point pointOne = new Point(0, 0);
             Point pointTwo = new Point(0, 10);
@@ -60,6 +60,17 @@ namespace UnitTestL01Tri
 
             Triangle tri = new Triangle(pointOne, pointTwo, pointThree);
             Assert.IsTrue(tri.isIsosceles());
+        }
+        [TestMethod]
+        //Test av konstruktor som tar tre punkter på triangel m olika sidor
+        public void constructorThreePointsScalene()
+        {
+            Point pointOne = new Point(0, 0);
+            Point pointTwo = new Point(0, 5);
+            Point pointThree = new Point(10, 0);
+
+            Triangle tri = new Triangle(pointOne, pointTwo, pointThree);
+            Assert.IsTrue(tri.isScalene());
         }
 
         [TestMethod]
