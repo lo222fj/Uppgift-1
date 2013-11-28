@@ -7,25 +7,45 @@ namespace UnitTestL01Tri
     public class TriangelUnitTest
     {
         [TestMethod]
-        public void isIsoscelesTest()
+        public void isIsoscelesTestTrue()
         {
             Triangle tri = new Triangle(1.0, 1.0, 0.5);
             Assert.IsTrue(tri.isIsosceles());
         }
-
         [TestMethod]
-        public void isEquilateralTest()
+        public void isIsoscelesTestFalse()
+        {
+            Triangle tri = new Triangle(1.0, 1.5, 0.5);
+            Assert.IsFalse(tri.isIsosceles());
+        }
+        
+        [TestMethod]
+        public void isEquilateralTestTrue()
         {
             Triangle tri = new Triangle(1.0, 1.0, 1.0);
             Assert.IsTrue(tri.isEquilateral());
         }
 
+        [TestMethod]
+        public void isEquilateralTestFalse()
+        {
+            Triangle tri = new Triangle(1.0, 2.0, 3.0);
+            Assert.IsFalse(tri.isEquilateral());
+        }
+
          [TestMethod]
-        public void isScaleneTest()
+        public void isScaleneTestTrue()
         {
             Triangle tri = new Triangle(1.0, 2.0, 3.0);
             Assert.IsTrue(tri.isScalene());
         }
+
+         [TestMethod]
+         public void isScaleneTestFalse()
+         {
+             Triangle tri = new Triangle(1.0, 2.0, 1.0);
+             Assert.IsFalse(tri.isScalene());
+         }
 
         [TestMethod]
         public void smallDifferencesBetweenSides()
